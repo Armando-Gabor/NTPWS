@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice>
+    <BrojRacuna>12345</BrojRacuna>
+    <DatumIzdavanja>2024-11-12</DatumIzdavanja>
+    <VrijemeIzdavanja>09:23</VrijemeIzdavanja>
+    <Napomena>Ovo je primjer računa</Napomena>
+    <RokZaPlacanje>2024-12-12</RokZaPlacanje>
+    <KodValute>EUR</KodValute>
+    <BrojStavki>1</BrojStavki>
+    <PeriodNaplate>
+        <PocetniDatum>2024-11-01</PocetniDatum>
+        <ZavrsniDatum>2024-11-30</ZavrsniDatum>
+    </PeriodNaplate>
+    <IzdavateljRacuna>
+        <OIB>12345678901</OIB>
+        <NazivTvrtke>Tvrtka d.o.o.</NazivTvrtke>
+        <Racunovodja>Marko Marić</Racunovodja>
+        <Adresa>Ulica 23</Adresa>
+        <Mjesto>Zagreb</Mjesto>
+    </IzdavateljRacuna>
+    <Kupac>
+        <OIB>98765432109</OIB>
+        <NazivTvrtke>Kupac d.o.o.</NazivTvrtke>
+        <Adresa>Ulica 32</Adresa>
+        <Mjesto>Zagreb</Mjesto>
+    </Kupac>
+    <PodaciZaPlacanje>
+        <PozivNaBroj>HR-1234567890</PozivNaBroj>
+        <ModelPlacanja>HR01</ModelPlacanja>
+        <OpisPlacanja>Za proizvod</OpisPlacanja>
+        <IBAN>HR12345678901234567890</IBAN>
+        <IznosZaUplatu>1000.00</IznosZaUplatu>
+    </PodaciZaPlacanje>
+    <Stavka>
+        <SifraArtikla>001</SifraArtikla>
+        <Naziv>Proizvod</Naziv>
+        <Kolicina>1</Kolicina>
+        <JedinicnaCijena>1000.00</JedinicnaCijena>
+        <UkupnaCijenaBezPoreza>1000.00</UkupnaCijenaBezPoreza>
+        <PoreznaStopa>25</PoreznaStopa>
+        <CijenaSPorezom>1250.00</CijenaSPorezom>
+    </Stavka>
+</Invoice>
