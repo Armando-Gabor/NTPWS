@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stranica o tehnologiji umjetne inteligencije">
-    <meta name="keywords" content="umjetna inteligencija, AI, LLM, strojno učenje, automatizacija, agenti, racunalna vizija, duboko učenje">
-    <meta name="author" content="Armando Gabor">
-    <link href="style.css" rel="stylesheet">
-    <title>Umjetna inteligencija</title>
-</head>
-<body>
-    <header>
-        <img src="images/banner.png" alt="Banner o umjetnoj inteligenciji" class="banner">
-        <nav>
-            <ul>
-                <li><a href="index.php">Početna stranica</a></li>
-                <li><a href="news.php">Novosti</a></li>
-                <li><a href="contact.php">Kontakt</a></li>
-                <li><a href="about.php">O nama</a></li>
-                <li><a href="gallery.php">Galerija</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php
+print '
     <main>
         <h1>O nama</h1>
         <figure>
@@ -46,7 +24,7 @@
         </p> 
 
         <p>
-            Depending on how they're used,they can create short stories, paintings,
+            Depending on how they are used,they can create short stories, paintings,
             pieces of code,or even musical compositions.
             The foundation for this creationlies in large amounts of data
             that the AI system accessesto identify patterns and similarities.
@@ -72,15 +50,5 @@
             biti odgovorni za činjenice.
         </p>
     </main>
-
-    <footer>
-        <div>
-            <p>&copy; 2024 Armando Gabor. Sva prava pridržana.
-                <a href="https://github.com/Armando-Gabor/NTPWS">
-                    <img src="images/github.png" alt="GitHub" class="social-icon">
-                </a>
-            </p>
-        </div>
-    </footer>
-</body>
-</html>
+';
+?>

@@ -1,80 +1,134 @@
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stranica o tehnologiji umjetne inteligencije">
-    <meta name="keywords" content="umjetna inteligencija, AI, LLM, strojno učenje, automatizacija, agenti, racunalna vizija, duboko učenje">
-    <meta name="author" content="Armando Gabor">
-    <link href="style.css" rel="stylesheet">
-    <title>Umjetna inteligencija</title>
-</head>
-<body>
-    <header>
-        <img src="images/banner.png" alt="Banner o umjetnoj inteligenciji" class="banner">
-        <nav>
-            <ul>
-                <li><a href="index.php">Početna stranica</a></li>
-                <li><a href="news.php">Novosti</a></li>
-                <li><a href="contact.php">Kontakt</a></li>
-                <li><a href="about.php">O nama</a></li>
-                <li><a href="gallery.php">Galerija</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Uvod u umjetnu inteligenciju</h1>
-        <figure>
-            <img src="images/neonAI.png" alt="Koncept umjetne inteligencije">
-            <figcaption>Umjetna inteligencija (Al) postoji desetljećima, otkako ju je John McCarthy definirao kao “znanost i inženjerstvo izrade inteligentnih strojeva”.</figcaption>
-        </figure>
-        <p>
-            Umjetna inteligencija (UI, prema engl. akronimu AI, od Artificial Intelligence), 
-            dio računalstva koji se bavi razvojem sposobnosti računala da obavljaju zadaće za koje je potreban neki oblik inteligencije; 
-            također oznaka svojstva neživog sustava koji pokazuje inteligenciju (inteligentni sustav).</p>
-        <p>
-            Razvoj umjetne inteligencije temelji se na tzv. strojnom učenju, tj. neuronskim mrežama, 
-            što takvim sustavima omogućuje svladavanje velike količine znanja, 
-            komunikaciju s čovjekom (prirodnim jezikom) ili nekim drugim neživim sustavom, 
-            učenje na temelju iskustva, donošenje zaključaka, prilagodljivo ponašanje, 
-            složeno planiranje i dr., pri čemu su, za razliku od čovjekove sposobnosti da istodobno obavlja raznovrsne funkcije, 
-            današnji inteligentni sustavi još uvijek specijalizirani za uži raspon mogućnosti.</p> 
-        <p>
-            Prema stupnju inteligencije, dijeli se na tzv. jaku i slabu: slaboj umjetnoj inteligenciji, 
-            kojoj pripadaju svi do danas osmišljeni sustavi, mogu se pripisati tek poneka inteligentna svojstva, 
-            a jaka umjetna inteligencija još nije dosegnuta – njezin bi razvoj podrazumijevao inteligenciju 
-            jednaku ljudskoj (opća umjetna inteligencija) ili pak snažniju od nje (umjetna superinteligencija), 
-            uz doseg stanja svijesti.Primjena umjetne inteligencije široka je i raznovrsna, 
-            danas osobito u području strojnoga prevođenja, ekspertnih sustava, robotike (kinestetička umjetna inteligencija), 
-            računalnih igara i simulacija, generiranja teksta i tzv. čavrljanja (chatbotovi), 
-            stvaranja glazbe ili slika, računalnoga vida (raspoznavanja uzoraka ili predmeta, analize scene), 
-            pretraživanja podataka, automatskoga programiranja, i dr.</p>
-        <p>
-            Zamisli o umjetnoj inteligenciji pojavljuju se u mitovima, legendama (npr. o Golemu) i 
-            književnosti od davnih vremena sve do danas, često izazivajući nelagodu oko mogućnosti da stroj 
-            intelektualno nadjača čovjeka. Razvoj umjetne inteligencije započeo je pojavom elektroničkih 
-            računala u drugoj polovici XX. st., pri čemu su pristupi i tehnike usvojeni iz raznih disciplina, 
-            a napose onih koje se među ostalim bave istraživanjima i mogućnostima načina ljudskoga mišljenja: 
-            kognitivne znanosti, matematike, logike, filozofije, psihologije, lingvistike, i dr.</p>
-        <p>
-            Prve je teorijske radove o umjetnoj inteligenciji 1950-ih objavio Alan Mathison Turing, 
-            koji je ujedno osmislio test prema kojem se ispituje inteligencija nekoga stroja 
-            (tzv. Turingov test), a prvim takvim računalnim programom smatra se The Logic Theorist (1955). 
-            Sustavnija istraživanja provode se od sredine 1950-ih, osobito potaknuta kongresom 1956 
-            (gdje je pojam skovan) na sveučilištu Dartmouth (New Hampshire, SAD), koji je organizirao 
-            John McCarthy (1927–2011), kojega se danas smatra začetnikom umjetne inteligencije, 
-            kao autora osnovnoga programskog jezika LISP-a (1958).</p>
-        <p>Izvor: <a href="https://www.enciklopedija.hr/clanak/umjetna-inteligencija" target="_blank" id="izvor">HE</a></p>
-    </main>
+<?php
+    session_start();
+    include("dbconn.php");
 
-    <footer>
-        <div>
-            <p>&copy; 2024 Armando Gabor. Sva prava pridržana.
-                <a href="https://github.com/Armando-Gabor/NTPWS">
-                    <img src="images/github.png" alt="GitHub" class="social-icon">
-                </a>
-            </p>
-        </div>
-    </footer>
-</body>
-</html>
+    if(!isset($_POST['_action_'])) { $_POST['_action_'] = FALSE; };
+    $menu = isset($_GET['menu']) ? $_GET['menu'] : 1;
+
+    $content = '';
+
+    switch($menu) {
+        case 1: 
+            $content = 'home.php'; 
+            break;
+        case 2: 
+            $content = 'news.php'; 
+            break;
+        case 3: 
+            $content = 'contact.php'; 
+            break;
+        case 4: 
+            $content = 'about.php'; 
+            break;
+        case 5: 
+            $content = 'gallery.php'; 
+            break;
+        case 6: 
+            $content = 'article.php'; 
+            break;
+        case 9: 
+            $content = 'prijava.php'; 
+            break;
+        case 10: 
+            $content = 'registracija.php'; 
+            break;
+        case 11: 
+            $content = 'admin.php'; 
+            break;
+        case 12: 
+            $content = 'odjava.php'; 
+            break;
+        case 13: 
+            $content = 'korisnici.php'; 
+            break;
+        case 14: 
+            $content = 'vijesti.php'; 
+            break;
+        case 15: 
+            $content = 'insert_news.php'; 
+            break;
+        case 16: 
+            $content = 'delete_news.php'; 
+            break;
+        case 17: 
+            $content = 'approve_news.php'; 
+            break;
+        case 18: 
+            $content = 'archive_news.php'; 
+            break;
+        case 19: 
+            $content = 'edit_news.php'; 
+            break;
+        case 20: 
+            $content = 'edit.php'; 
+            break;
+        case 21: 
+            $content = 'edit_users.php'; 
+            break;
+        default: 
+            $content = 'home.php'; // Default to home
+    }
+
+    print '
+    <!DOCTYPE html>
+    <html lang="hr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Stranica o tehnologiji umjetne inteligencije">
+        <meta name="keywords" content="umjetna inteligencija, AI, LLM, strojno učenje, automatizacija, agenti, racunalna vizija, duboko učenje">
+        <meta name="author" content="Armando Gabor">
+        <link href="style.css" rel="stylesheet">
+        <title>Umjetna inteligencija</title>
+    </head>
+    <body>
+        <header>
+            <img src="images/banner.png" alt="Banner o umjetnoj inteligenciji" class="banner">
+            <nav>
+                <ul>
+                    <li><a href="index.php?menu=1">Početna stranica</a></li>
+                    <li><a href="index.php?menu=2">Novosti</a></li>
+                    <li><a href="index.php?menu=3">Kontakt</a></li>
+                    <li><a href="index.php?menu=4">O nama</a></li>
+                    <li><a href="index.php?menu=5">Galerija</a></li>';
+                    if (!isset($_SESSION['user']['valid']) || $_SESSION['user']['valid'] == 'false') {
+                        print '
+                        <li><a href="index.php?menu=9">Prijava</a></li>
+                        <li><a href="index.php?menu=10">Registracija</a></li>';
+                    }
+                    else if ($_SESSION['user']['valid'] == 'true') {
+                        print '
+                        <li><a href="index.php?menu=11">Admin</a></li>
+                        <li><a href="index.php?menu=12">Sign Out</a></li>';
+                    }
+                print '    
+                </ul>
+            </nav>
+        </header>';
+    if (isset($_SESSION['message'])) {
+		print $_SESSION['message'];
+		unset($_SESSION['message']);
+	};
+
+    // Include the appropriate content file
+    if (file_exists($content)) {
+        include($content);
+    } else {
+        // Handle file not found
+        print "<p>Stranica nije pronađena.</p>";
+    }
+
+    print '
+        <footer>
+            <div>
+                <p>&copy; 2024 Armando Gabor. Sva prava pridržana.
+                    <a href="https://github.com/Armando-Gabor/NTPWS">
+                        <img src="images/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </body>
+    </html>
+    ';
+?>
